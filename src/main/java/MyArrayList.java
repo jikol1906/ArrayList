@@ -1,10 +1,9 @@
-import StackQueue.MyQueue;
-import StackQueue.MyStack;
+import Exception.MyArrayOutOfBoundsException;
 
 /**
  * Created by borisgrunwald on 13/09/2016.
  */
-public class MyArrayList<T> implements MyQueue<T>{
+public class  MyArrayList<T> implements MyQueue<T>{
 
     private T[] arr;
     private int size;
@@ -79,7 +78,7 @@ public class MyArrayList<T> implements MyQueue<T>{
 
     }
 
-    public T get(int index) {
+    public T get(int index) throws MyArrayOutOfBoundsException {
 
         checkIndex(index);
 
@@ -87,7 +86,7 @@ public class MyArrayList<T> implements MyQueue<T>{
 
     }
 
-    public void set(T data, int index) {
+    public void set(T data, int index) throws MyArrayOutOfBoundsException {
 
         checkIndex(index);
         arr[index] = data;
@@ -104,10 +103,10 @@ public class MyArrayList<T> implements MyQueue<T>{
         size = 0;
     }
 
-    private void checkIndex(int index) {
+    private void checkIndex(int index) throws MyArrayOutOfBoundsException {
 
         if(index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("index: " + index);
+            throw new MyArrayOutOfBoundsException("Index: " + index);
         }
 
     }
@@ -193,7 +192,7 @@ public class MyArrayList<T> implements MyQueue<T>{
         return size == 0;
     }
 
-    public T peek() {
+    public T peek() throws MyArrayOutOfBoundsException {
         return this.get(size-1);
     }
 

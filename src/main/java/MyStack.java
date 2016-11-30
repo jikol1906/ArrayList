@@ -1,5 +1,3 @@
-package StackQueue;
-
 /**
  * Created by borisgrunwald on 27/09/2016.
  */

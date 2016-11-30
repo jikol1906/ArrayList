@@ -1,4 +1,3 @@
-import StackQueue.MyQueue;
 import org.junit.Before;
 import org.junit.Test;
 
